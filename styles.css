@@ -107,7 +107,7 @@ header {
     display: flex;
     background: #111;
     color: white;
-    padding: 0.8rem 1.5rem;
+    padding: 0.8rem;
     border: 2px solid #005299;
     border-radius: 10px;
     font-size: 1rem;
