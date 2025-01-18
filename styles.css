@@ -116,18 +116,14 @@ header {
   }
 }
 
-/* Content Sections */
 .content-section {
   display: none;
-  padding: 2rem 1rem;
-  text-align: center;
-  background: #111;
-  flex-grow: 1;
 }
 
 .content-section.active {
   display: block;
 }
+
 
 /* About Section */
 .about-content {
