@@ -1,9 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
     // Variables
     const filterButtons = document.querySelectorAll(".filter-btn");
+    const filterButtonToggle = document.querySelector(".filter-btn-toggle"); // The toggle button for the dropdown
+    const filterButtonContainer = document.querySelector(".filter-btn-container"); // Container for filter buttons
     const sections = document.querySelectorAll(".content-section");
-  
-    // Add click event listeners to each button
+
+    // Add click event listener to the toggle button
+    if (filterButtonToggle) {
+        filterButtonToggle.addEventListener("click", () => {
+            filterButtonContainer.classList.toggle("active"); // Toggle the dropdown visibility
+        });
+    }
+
+    // Add click event listeners to each filter button inside the dropdown
     filterButtons.forEach((button) => {
         button.addEventListener("click", () => {
             // Remove active state from all buttons
@@ -33,3 +42,4 @@ document.addEventListener("DOMContentLoaded", () => {
         sections[0].classList.add("active");
     }
 });
+                                   
