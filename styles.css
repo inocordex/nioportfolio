@@ -122,10 +122,12 @@ header {
   .filter-buttons {
     position: fixed;
     top: 0;
+    padding-bottom: 35px;
     flex-direction: row;
     gap: 1rem;
     padding-top: 1rem;
     transform: none;
+    with: min-content;
   }
 }
 
@@ -273,6 +275,9 @@ header {
   .btn-con .main-btn {
     font-size: 0.8rem;
     padding: 0.5rem 0.8rem;
+  }
+  .filter-btn{
+    padding: 2px;
   }
   }
   
