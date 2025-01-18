@@ -32,22 +32,22 @@ header {
   background: linear-gradient(135deg, #3b4643, #0d757c);
   text-align: center;
   display: flex;
+  flex-direction: column; /* Adjust for smaller screens */
+  align-items: center;
   height: 50vh;
-  width:60%;
-  height: 100%;
-  top: 0;
+  width: 90%; /* Reduced width for smaller screens */
   padding: 2rem;
 }
 
 .left-header .image img {
-  width: 200px;
+  width: 150px; /* Adjusted for smaller screens */
   border-radius: 50%;
   background-color: rgb(27, 27, 27);
   border: 4px solid gold;
 }
 
 .name {
-  font-size: 2.5rem;
+  font-size: 2rem; /* Reduced font size for smaller screens */
   line-height: 1.4;
   font-weight: 700;
 }
@@ -57,194 +57,152 @@ header {
 }
 
 .right-header p {
-  font-size: 1.2rem;
+  font-size: 1rem; /* Adjusted font size */
   margin: 1rem 0;
 }
 
 .btn-con .main-btn {
-  display: inline-block;
-  background: #867510;
-  color: #fff;
-  text-decoration: none;
-  padding: 1rem 1rem;
-  border-radius: 5px;
-  font-size: 1rem;
-  font-weight: bold;
-  transition: all 0.3s ease-in-out;
+  padding: 0.8rem 1rem; /* Adjusted padding */
+  font-size: 0.9rem; /* Adjusted font size */
 }
 
-.btn-con .main-btn:hover {
-  background: gold;
-  color: #000;
-}
-
-/* Filter Buttons - Fixed on the Right Side */
 .filter-buttons {
   position: fixed;
-  top: 38%;
-  right: 2rem;
-  width: 10%;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  z-index: 1000;
+  top: 30%;
+  right: 1rem;
+  width: 15%; /* Adjusted width for smaller screens */
 }
 
 .filter-btn {
-  padding: 0.8rem 1.5rem;
-  font-size: 1rem;
-  font-weight: bold;
-  background: #111;
-  color: white;
-  border: 2px solid #005299;
-  border-radius: 5px 0 0 5px;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-}
-
-.filter-btn i {
-  margin-right: 0.5rem;
-}
-
-.filter-btn:hover {
-  background: #015701;
-  color: white;
-}
-
-.filter-btn.active {
-  background: goldenrod;
-  color: white;
+  padding: 0.6rem 1.2rem; /* Adjusted padding */
+  font-size: 0.9rem; /* Adjusted font size */
 }
 
 /* Content Sections */
 .content-section {
-  height: 80%;
-  display: none;
-  padding: 5rem 0;
-  text-align: center;
-  background: #111;
-  flex-grow: 1;  /* This ensures content sections grow to take available space */
-}
-
-.content-section.active {
-  display: block;
+  padding: 2rem 1rem; /* Adjusted padding */
 }
 
 /* About Section */
 .about-content {
-  background: linear-gradient(135deg, #3b4643, #0d757c);
-  text-align: center;
-  display: flex;
-  height: min-content;
-  width:80%;
-  height: 100%;
-  top: 0;
-  padding: 2rem;
+  flex-direction: column; /* Adjust layout for smaller screens */
+  width: 100%; /* Adjusted width */
+  padding: 1.5rem;
 }
 
 .profile-img {
-  max-width: 100px;
+  max-width: 80px; /* Adjusted image size */
   border-radius: 20%;
-  border: 4px solid #4facfe;
 }
 
 .about p {
-  max-width: 80%;
-  line-height: 1.6;
-  font-size: 1.1rem;
-  color: #ddd;
-  height: min-content;
+  font-size: 1rem; /* Adjusted font size */
+  max-width: 90%; /* Adjusted width */
 }
 
 /* Projects Section */
 .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  width: 80%;
-}
-.project-card{
-  background-color: #3b4643;
-  padding: 1rem;
-  border-radius: 10px;
-  width: 80%;
-}
-.project-card img {
-  width: 100%;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-}
-/* Skills Section */
-.skills-content {
-  max-width: 800px;
-  margin: 0 auto;
-  color: #f5f5f5;
-  height: min-content;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjusted grid for responsiveness */
+  gap: 1.5rem; /* Reduced gap for smaller screens */
 }
 
-.skill-item {
-  margin-bottom: 1.5rem;
+.project-card {
+  width: 100%; /* Full width for smaller screens */
+}
+
+/* Skills Section */
+.skills-content {
+  max-width: 100%; /* Adjusted width */
+  padding: 1rem; /* Added padding */
 }
 
 .skill-item h4 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-  color: #fff;
-}
-
-.skill-bar {
-  background: #333;
-  border-radius: 5px;
-  height: 10px;
-  width: 100%;
-}
-
-.skill-progress {
-  background: goldenrod;
-  height: 100%;
-  border-radius: 5px;
-  transition: width 0.3s ease-in-out;
+  font-size: 1rem; /* Adjusted font size */
 }
 
 .percentage {
-  font-size: 1rem;
-  margin-top: 0.5rem;
-  display: block;
-  color: #f5f5f5;
+  font-size: 0.9rem; /* Adjusted font size */
 }
-
 
 /* Footer Section */
 .footer {
-  padding: 2rem 0;
-  background: #111;
-  text-align: center;
-  position: relative;
+  padding: 1.5rem 0; /* Adjusted padding */
 }
 
 .footer p {
-  margin-bottom: 1rem;
-  font-size: 1rem;
-  color: #f5f5f5;
+  font-size: 0.9rem; /* Adjusted font size */
 }
 
 .footer .social-links a {
-  color: #4facfe;
-  margin: 0 0.5rem;
-  font-size: 1.2rem;
-  text-decoration: none;
-  transition: color 0.3s ease-in-out;
+  font-size: 1rem; /* Adjusted font size */
 }
 
-.footer .social-links a:hover {
-  color: gold;
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .header-content {
+    width: 100%; /* Full width on tablets */
+  }
+
+  .left-header .image img {
+    width: 120px; /* Smaller image for tablets */
+  }
+
+  .name {
+    font-size: 1.8rem; /* Adjusted font size */
+  }
+
+  .right-header p {
+    font-size: 0.9rem; /* Smaller font size */
+  }
+
+  .filter-buttons {
+    width: 20%; /* Adjusted width for tablets */
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Smaller grid items */
+  }
 }
 
-/* Additional Styles for Footer */
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  justify-content: space-between;  /* Ensures footer stays at the bottom */
-}
+@media screen and (max-width: 480px) {
+  .header-content {
+    padding: 1rem; /* Reduced padding */
+  }
+
+  .left-header .image img {
+    width: 100px; /* Smaller image for mobile */
+  }
+
+  .name {
+    font-size: 1.5rem; /* Smaller font size */
+  }
+
+  .right-header p {
+    font-size: 0.8rem; /* Smaller font size */
+  }
+
+  .filter-buttons {
+    position: static; /* Stack buttons vertically for smaller screens */
+    margin: 2rem 0;
+    width: auto; /* Auto width */
+  }
+
+  .filter-btn {
+    padding: 0.5rem 1rem; /* Smaller padding */
+    font-size: 0.8rem; /* Smaller font size */
+  }
+
+  .about-content {
+    width: 100%; /* Full width for mobile */
+    padding: 1rem; /* Reduced padding */
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr; /* Single column on mobile */
+  }
+
+  .footer p {
+    font-size: 0.8rem; /* Smaller font size */
+  }
+  }
+  
