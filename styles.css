@@ -117,19 +117,27 @@ header {
   background-size: 20px;
 }
 
-/* Media Query for Small Screens */
 @media (max-width: 768px) {
   .filter-buttons {
     position: fixed;
     top: 0;
-    padding-bottom: 35px;
-    flex-direction: row;
-    gap: 1rem;
-    padding-top: 1rem;
-    transform: none;
-    with: min-content;
+    right: 0;
+    width: 100%; /* Ensure it spans full width on small screens */
+    display: flex;
+    flex-direction: row; /* Keep buttons in a row */
+    flex-wrap: wrap; /* Prevent buttons from being cut off */
+    gap: 0.5rem;
+    background-color: #111; /* Distinguish the area */
+    z-index: 1000; /* Keep above content */
+    padding: 1rem;
+    border-bottom: 2px solid #005299;
+  }
+
+  .content-section {
+    padding-top: 5rem; /* Push content below the buttons */
   }
 }
+
 
 /* Content Sections */
 .content-section {
@@ -275,9 +283,6 @@ header {
   .btn-con .main-btn {
     font-size: 0.8rem;
     padding: 0.5rem 0.8rem;
-  }
-  .filter-btn{
-    padding: 2px;
   }
   }
   
