@@ -93,11 +93,13 @@ header {
   padding: 1rem;
 }
 
+/* Filter Buttons */
 .filter-btn {
-  padding: 0.6rem 1.2rem;
-  font-size: 0.9rem;
+  padding: 2rem;
+  font-size: 1rem;
   font-weight: bold;
-  background: gray;
+  background: #111 url('https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/filter.svg') no-repeat center;
+  background-size: 20px;
   color: white;
   border: 2px solid #005299;
   border-radius: 10px;
@@ -106,13 +108,25 @@ header {
 }
 
 .filter-btn:hover {
-  background: #015701;
+  background-color: #015701;
   color: white;
 }
 
 .filter-btn.active {
-  background: goldenrod;
-  color: white;
+  background: goldenrod url('https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/filter.svg') no-repeat center;
+  background-size: 20px;
+}
+
+/* Media Query for Small Screens */
+@media (max-width: 768px) {
+  .filter-buttons {
+    position: fixed;
+    top: 0;
+    flex-direction: row;
+    gap: 1rem;
+    padding-top: 1rem;
+    transform: none;
+  }
 }
 
 /* Content Sections */
@@ -242,15 +256,6 @@ header {
     height: auto;
   }
 
-  .filter-buttons {
-    position: static;
-    flex-direction: row;
-    justify-content: center;
-    gap: 0.5rem;
-    margin-top: 1rem;
-    padding: 2rem;
-  }
-
   .about-content {
     padding: 1.5rem;
   }
@@ -268,11 +273,6 @@ header {
   .btn-con .main-btn {
     font-size: 0.8rem;
     padding: 0.5rem 0.8rem;
-  }
-
-  .filter-btn {
-    font-size: 0.8rem;
-    padding: 0.4rem 1rem;
   }
   }
   
