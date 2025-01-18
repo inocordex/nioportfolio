@@ -78,66 +78,81 @@ header {
   background: gold;
   color: #000;
 }
-
-/* Filter Buttons - Fixed on the Right Side */
+/* Default state of the filter buttons container */
 .filter-buttons {
   position: fixed;
-  top: 50%;
-  right: 1rem;
-  width: auto;
-  transform: translateY(-50%);
+  top: 1rem;
+  left: 1rem;
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 1rem;
   z-index: 1000;
+  background-color: #111;
+  border-radius: 10px;
   padding: 1rem;
+  transition: all 0.3s ease;
 }
 
-/* Filter Buttons */
+/* Make buttons hidden initially */
 .filter-btn {
-  padding: 2rem;
+  display: block;
+  padding: 1rem 1.5rem;
   font-size: 1rem;
   font-weight: bold;
-  background: #111 url('https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/filter.svg') no-repeat center;
-  background-size: 20px;
+  background: #111;
   color: white;
   border: 2px solid #005299;
-  border-radius: 10px;
+  border-radius: 5px;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out;
 }
 
+/* Change the background when hovered */
 .filter-btn:hover {
-  background-color: #015701;
+  background: #015701;
   color: white;
 }
 
+/* Add active state for selected filter */
 .filter-btn.active {
-  background: goldenrod url('https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/filter.svg') no-repeat center;
-  background-size: 20px;
+  background: goldenrod;
+  color: white;
 }
+
+/* The container for dropdown behavior */
+.filter-buttons.active {
+  display: block; /* Display dropdown buttons */
+  position: absolute;
+  top: 2rem; /* Adjust for space from top */
+  left: 0;
+  right: 0;
+  width: 200px;
+  background-color: #111;
+  z-index: 1000;
+}
+
+/* Add transition for dropdown effect */
+.filter-buttons.active .filter-btn {
+  display: block; /* Show the buttons in the dropdown */
+}
+
+/* Hide the filter buttons if not active */
+.filter-buttons:not(.active) {
+  display: none;
+  }
+  
 
 @media (max-width: 768px) {
   .filter-buttons {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 100%; /* Ensure it spans full width on small screens */
-    display: flex;
-    flex-direction: row; /* Keep buttons in a row */
-    flex-wrap: wrap; /* Prevent buttons from being cut off */
-    gap: 0.5rem;
-    background-color: #111; /* Distinguish the area */
-    z-index: 1000; /* Keep above content */
-    padding: 1rem;
-    border-bottom: 2px solid #005299;
+    top: 1rem;
+    left: 0;
+    width: 100%;  /* Make dropdown full width on small screens */
   }
 
-  .content-section {
-    padding-top: 5rem; /* Push content below the buttons */
+  .filter-btn {
+    width: 100%;  /* Make buttons full width on small screens */
   }
 }
-
 
 /* Content Sections */
 .content-section {
