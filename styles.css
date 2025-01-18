@@ -90,16 +90,17 @@ header {
   flex-direction: column;
   gap: 0.8rem;
   z-index: 1000;
+  padding: 1rem;
 }
 
 .filter-btn {
   padding: 0.6rem 1.2rem;
   font-size: 0.9rem;
   font-weight: bold;
-  background: #111;
+  background: gray;
   color: white;
   border: 2px solid #005299;
-  border-radius: 5px 0 0 5px;
+  border-radius: 10px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
@@ -247,6 +248,7 @@ header {
     justify-content: center;
     gap: 0.5rem;
     margin-top: 1rem;
+    padding: 2rem;
   }
 
   .about-content {
