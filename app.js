@@ -6,43 +6,48 @@ document.addEventListener("DOMContentLoaded", () => {
   const filterToggleButton = document.querySelector('.filter-btn-toggle');
   const filterContainer = document.querySelector('.filter-btn-container');
 
-  console.log(filterButtons); // Check if buttons are selected
-  console.log(sections); // Check if sections are selected
+  // Function to handle button clicks
+  const handleButtonClick = (button) => {
+    // Remove 'active' class from all buttons and sections
+    document.querySelectorAll('.active').forEach(el => el.classList.remove('active'));
 
-  // Add click event to each filter button
+    // Add 'active' class to the clicked button
+    button.classList.add('active');
+
+    // Find the target section and activate it
+    const targetSection = document.getElementById(button.dataset.target);
+    if (targetSection) {
+      targetSection.classList.add('active');
+    } else {
+      console.error(`No section found for target: ${button.dataset.target}`);
+    }
+  };
+
+  // Attach click events to each filter button
   filterButtons.forEach(button => {
     button.addEventListener('click', () => {
-      console.log(`Clicked on button: ${button.textContent}`);
-
-      // Hide all sections
-      sections.forEach(section => {
-        section.classList.remove('active');
-      });
-
-      // Remove active class from all buttons
-      filterButtons.forEach(btn => {
-        btn.classList.remove('active');
-      });
-
-      // Show the selected section and add active class to the button
-      const targetSection = document.getElementById(button.getAttribute('data-target'));
-      if (targetSection) {
-        targetSection.classList.add('active');
-      } else {
-        console.error(`No section found for target: ${button.getAttribute('data-target')}`);
-      }
-      button.classList.add('active');
+      handleButtonClick(button);
     });
   });
 
-  // Toggle filter dropdown
+  // Toggle the filter dropdown for mobile devices
   if (filterToggleButton && filterContainer) {
     filterToggleButton.addEventListener('click', () => {
       console.log("Filter toggle button clicked");
-      filterContainer.classList.toggle('active');
+      const isActive = filterContainer.classList.toggle('active');
+      
+      // Accessibility: Update ARIA attributes
+      filterToggleButton.setAttribute('aria-expanded', isActive);
     });
+
+    // Accessibility: Set initial ARIA attributes
+    filterToggleButton.setAttribute('aria-expanded', 'false');
   } else {
     console.error("Filter toggle button or container not found");
   }
+
+  // Fallback if no buttons or sections exist
+  if (!filterButtons.length || !sections.length) {
+    console.warn("No filter buttons or content sections found. Please check your HTML structure.");
+  }
 });
-                          
